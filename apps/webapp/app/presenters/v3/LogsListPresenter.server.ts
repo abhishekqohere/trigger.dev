@@ -232,10 +232,10 @@ export class LogsListPresenter extends BasePresenter {
       environmentId,
     });
 
-    queryBuilder.where("organization_id = {organizationId: String}", {
-      organizationId,
-    });
-    queryBuilder.where("project_id = {projectId: String}", { projectId });
+    // queryBuilder.where("organization_id = {organizationId: String}", {
+    //   organizationId,
+    // });
+    // queryBuilder.where("project_id = {projectId: String}", { projectId });
 
     if (effectiveFrom) {
       queryBuilder.where("triggered_timestamp >= {triggeredAtStart: DateTime64(3)}", {
