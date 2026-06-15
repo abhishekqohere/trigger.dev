@@ -59,7 +59,7 @@ const GithubAppEnvSchema = z.preprocess(
       GITHUB_APP_ENABLED: z.literal("1"),
       GITHUB_APP_ID: z.string(),
       GITHUB_APP_PRIVATE_KEY: z.string(),
-      GITHUB_APP_WEBHOOK_SECRET: z.string(),
+      GITHUB_APP_WEBHOOK_SECRET: z.string().default("dev-webhook-secret"),
       GITHUB_APP_SLUG: z.string(),
     }),
     z.object({
