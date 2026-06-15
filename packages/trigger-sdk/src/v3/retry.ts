@@ -41,7 +41,7 @@ function onThrow<T>(
     async (span) => {
       let attempt = 1;
 
-      while (attempt <= opts.maxAttempts) {
+      while (attempt < opts.maxAttempts) {
         const innerSpan = tracer.startSpan("retry.fn()", {
           attributes: {
             [SemanticInternalAttributes.STYLE_ICON]: "function",
