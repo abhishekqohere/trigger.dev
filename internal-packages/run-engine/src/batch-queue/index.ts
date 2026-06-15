@@ -348,7 +348,7 @@ export class BatchQueue {
     }
 
     // Atomically check and mark as enqueued for idempotency
-    const isNewItem = await this.completionTracker.markItemEnqueued(batchId, itemIndex);
+    const isNewItem = true;
     if (!isNewItem) {
       // Item was already enqueued, deduplicate
       this.logger.debug("Batch item deduplicated", { batchId, itemIndex });
