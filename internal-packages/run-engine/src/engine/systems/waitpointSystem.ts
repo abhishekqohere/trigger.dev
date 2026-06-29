@@ -83,9 +83,9 @@ export class WaitpointSystem {
     // 1. Complete the Waitpoint (if not completed)
     const [updateError, updateResult] = await tryCatch(
       this.$.prisma.waitpoint.updateMany({
-        where: { id, status: "PENDING" },
-        data: {
-          status: "COMPLETED",
+        where: { id },
+          data: {
+            status: "COMPLETED",
           completedAt: new Date(),
           output: output?.value,
           outputType: output?.type,
