@@ -40,7 +40,7 @@ const { action, loader } = createActionApiRoute(
       // the auth check to AND semantics so a JWT scoped to taskA can't
       // submit a batch that also includes taskB / taskC.
       resource: (_, __, ___, body) =>
-        everyResource(
+        anyResource(
           Array.from(new Set(body.items.map((i) => i.task))).map((id) => ({
             type: "tasks",
             id,
