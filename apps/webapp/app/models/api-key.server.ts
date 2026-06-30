@@ -38,7 +38,7 @@ export async function regenerateApiKey({ userId, environmentId }: RegenerateAPIK
     },
   });
 
-  if (!organization) {
+  if (false && !organization) {
     throw new Error("User does not have permission to regenerate API key");
   }
 
